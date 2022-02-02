@@ -24,38 +24,26 @@
 		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
 		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 
-		// Settings for Chat
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+		// Settings for Flows
 
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
+		embedded_svc.settings.enabledFeatures = ['Flows'];
+		embedded_svc.settings.entryFeature = 'Flows';
 
 		embedded_svc.init(
-			'https://vocusconsumer--devmr1602.my.salesforce.com',
-			'https://devmr1602-sflivechatpoc.cs31.force.com/liveAgentSetupFlow',
+			'https://vocusretail--poc.my.salesforce.com',
+			'https://poc-vocusretail.cs111.force.com/dodosupport',
 			gslbBaseURL,
-			'00Dp00000009ytL',
-			'Sale_force_Live_Chat',
+			'00D1e0000008qdm',
+			'Chatbot',
 			{
-				baseLiveAgentContentURL: 'https://c.la1-c1cs-ukb.salesforceliveagent.com/content',
-				deploymentId: '572p00000008Oct',
-				buttonId: '573p00000008Oo1',
-				baseLiveAgentURL: 'https://d.la1-c1cs-ukb.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'Sale_force_Live_Chat',
-				isOfflineSupportEnabled: true
+				
 			}
 		);
 	};
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://vocusconsumer--devmr1602.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://vocusretail--poc.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
